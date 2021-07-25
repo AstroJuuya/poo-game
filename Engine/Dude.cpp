@@ -349,21 +349,22 @@ void Dude::Draw( Graphics& gfx) const
 
 void Dude::Update( const Keyboard & kbd,float dt )
 {
+	const int ts = int(1.0f / dt);
 	if( kbd.KeyIsPressed( VK_RIGHT ) )
 	{
-		pos.x+= speed * dt;
+		pos.x+= speed / ts;
 	}
 	if( kbd.KeyIsPressed( VK_LEFT ) )
 	{
-		pos.x-= speed * dt;
+		pos.x-= speed / ts;
 	}
 	if( kbd.KeyIsPressed( VK_DOWN ) )
 	{
-		pos.y+= speed * dt;
+		pos.y+= speed / ts;
 	}
 	if( kbd.KeyIsPressed( VK_UP ) )
 	{
-		pos.y-= speed * dt;
+		pos.y-= speed / ts;
 	}
 }
 

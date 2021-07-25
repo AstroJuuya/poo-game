@@ -51,6 +51,7 @@ void Game::Go()
 void Game::UpdateModel()
 {
 	const float dt = ft.Mark();
+	const int ts = int( 1.0f / dt );
 
 	goal.UpdateColor();
 	if( isStarted && !isGameOver )
