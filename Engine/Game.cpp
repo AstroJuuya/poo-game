@@ -35,9 +35,9 @@ Game::Game( MainWindow& wnd )
 	std::uniform_int_distribution<int> vDist( -1,1 );
 	for( int i = 0; i < nPoo; ++i )
 	{
-		poos[i].Init( xDist( rng ),yDist( rng ),vDist( rng ),vDist( rng ) );
+		poos[i].Init( xDist( rng ),yDist( rng ), 0.5f, 0.5f );
 	}
-	title.Play();
+	title.Play( 1.0F, 0.2F );
 }
 
 void Game::Go()
@@ -62,7 +62,7 @@ void Game::UpdateModel()
 			if( poos[i].TestCollision( dude ) )
 			{
 				isGameOver = true;
-				fart.Play( rng );
+				fart.Play( rng, 0.2F );
 			}
 		}
 
@@ -70,7 +70,7 @@ void Game::UpdateModel()
 		{
 			goal.Respawn( xDist( rng ),yDist( rng ) );
 			meter.IncreaseLevel();
-			pickup.Play( rng );
+			pickup.Play( rng, 0.2F );
 		}
 	}
 	else
