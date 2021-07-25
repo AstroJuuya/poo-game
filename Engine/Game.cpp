@@ -37,7 +37,7 @@ Game::Game( MainWindow& wnd )
 	{
 		poos[i].Init( xDist( rng ),yDist( rng ), vDist( rng ), vDist( rng ) );
 	}
-	title.Play( 1.0F, 0.2F );
+	title.Play( 1.0f, 0.2f );
 }
 
 void Game::Go()
@@ -62,7 +62,7 @@ void Game::UpdateModel()
 			if( poos[i].TestCollision( dude ) )
 			{
 				isGameOver = true;
-				fart.Play( rng, 0.2F );
+				fart.Play( rng, 0.2f );
 			}
 		}
 
@@ -70,7 +70,7 @@ void Game::UpdateModel()
 		{
 			goal.Respawn( xDist( rng ),yDist( rng ) );
 			meter.IncreaseLevel();
-			pickup.Play( rng, 0.2F );
+			pickup.Play( rng, 0.2f );
 		}
 	}
 	else
