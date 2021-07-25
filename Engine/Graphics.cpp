@@ -336,6 +336,20 @@ void Graphics::DrawRect( int x0,int y0,int x1,int y1,Color c )
 	}
 }
 
+void Graphics::DrawCircle(int x, int y, int rad, Color c)
+{
+	for (int i = x - rad; i <= x + rad; ++i)
+	{
+		for (int j = y - rad; j <= y + rad; ++j)
+		{
+			if ( pow( (i - x), 2 ) + pow( (j - y), 2 ) <= pow(rad, 2) )
+			{
+				PutPixel(i, j, c);
+			}
+		}
+	}
+}
+
 //////////////////////////////////////////////////
 //           Graphics Exception
 Graphics::Exception::Exception( HRESULT hr,const std::wstring& note,const wchar_t* file,unsigned int line )
